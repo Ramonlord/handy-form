@@ -1,0 +1,80 @@
+<script>
+jQuery(function(){
+	jQuery('.bf-radio-triger').click(function(e){
+  	  var totalPrice = Number(jQuery('.bf-total-price').text());
+	  
+	  var old_active = jQuery('.bf-radio-triger[data-active="true"]');
+	  jQuery(old_active).attr('data-active',false);
+	  var old_price = Number(jQuery(old_active).attr('data-price'));
+	  debugger;
+	  totalPrice -= old_price;
+	  
+	  var price = Number(jQuery(this).attr('data-price'));
+	  
+	  totalPrice += price;
+	  
+	  jQuery(this).attr('data-active',true);
+	  
+	  jQuery('.bf-total-price').text(totalPrice);
+
+	});
+	jQuery('.bf-button-triger').click(function(e){
+	  //e.preventDefault();
+	  var btnName = jQuery(this).attr('data-name') || alert('Button havent NAME!');
+	  var price = Number(jQuery(this).attr('data-price'));
+	  var text = jQuery(this).attr('data-text') || undefined;
+	  var isActive = jQuery(this).attr('data-active') || 'false';
+
+  	  var totalPrice = Number(jQuery('.bf-total-price').text());
+	  
+	  if(isActive === 'true'){
+	    jQuery(this).attr('data-active','false').removeClass('bf-active');
+		totalPrice -=price;
+		jQuery('.list-element-'+btnName).detach();
+		//jQuery(this).find('input[type="checkbox"]').prop('checked',false);
+	  }else{
+	    jQuery(this).attr('data-active','true').addClass('bf-active');
+		totalPrice +=price;
+		!text || jQuery('.bf-list').append('<div class="list-element list-element-'+btnName+'">'+text+'</div>');
+		//jQuery(this).find('input[type="checkbox"]').prop('checked',true);
+	  }
+	  
+	  jQuery('.bf-total-price').text(totalPrice);
+	  
+	});
+	
+});
+</script>
+<div class="bf-wrap">
+  <div class="bf-panel bf-left">
+    <form method="post">
+	
+	  <input id="w1" name="quote_request[extra_ids][]" type="checkbox" value="2" style="display: ">
+	  <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">
+	    Text in button
+	  </label>
+      
+	  <input  id = "w2" name="quote_request[extra_ids][]" type="checkbox" value="2" style="display: ">
+	  <label for="w2" class="bf-button bf-white bf-button-triger" data-price="45" data-text="Clean good" data-name="n2">
+	    Text in button
+	  </label>
+	  
+	  <div class="">
+	    <input name="quote_request[extra_ids][]" type="radio" value="2" style="display: " id="q1">
+	    <label for="q1" class="bf-button bf-white bf-radio-triger" data-name="q1" data-price="-15" data-active="false">Each week</label>
+		
+	    <input name="quote_request[extra_ids][]" type="radio" value="2" style="display: " id="q2" checked="true">
+	    <label for="q2" class="bf-button bf-white bf-radio-triger" data-name="q2" data-price="-45" data-active="true">Each 2 week</label>
+	  </div>
+    </form>
+  </div>
+  <div class="bf-panel bf-right">
+    <div class="bf-price">
+	  Total price: <span class="bf-total-price">125</span> $
+	</div>
+	
+    <div class="bf-list">
+	  <div class="list-element list-element-NAME">+ Example of item</div>
+	</div>
+  </div>
+</div>

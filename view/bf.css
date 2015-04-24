@@ -1,0 +1,52 @@
+.bf-wrap{
+  border: 1px solid;
+}
+
+
+.bf-panel{
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid red;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.bf-left{
+  width: 60%;
+  margin-right: 3%;
+}
+
+.bf-right{
+  width: 36%;
+}
+
+
+.bf-button{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.bf-button.bf-white{
+  background-color: white;
+  border: 1px solid #00CDED;
+}
+
+.bf-button.bf-white.bf-active{
+  background-color: #00CDED;
+}
