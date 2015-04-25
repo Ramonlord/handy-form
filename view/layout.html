@@ -4,7 +4,8 @@ jQuery(function(){
   	  var totalPrice = Number(jQuery('.bf-total-price').text());
 	  
 	  var old_active = jQuery('.bf-radio-triger[data-active="true"]');
-	  jQuery(old_active).attr('data-active',false);
+	  jQuery(old_active).attr('data-active',false).removeClass('bf-active');
+	  
 	  var old_price = Number(jQuery(old_active).attr('data-price'));
 	  debugger;
 	  totalPrice -= old_price;
@@ -13,7 +14,7 @@ jQuery(function(){
 	  
 	  totalPrice += price;
 	  
-	  jQuery(this).attr('data-active',true);
+	  jQuery(this).attr('data-active',true).addClass('bf-active');
 	  
 	  jQuery('.bf-total-price').text(totalPrice);
 
@@ -42,6 +43,32 @@ jQuery(function(){
 	  jQuery('.bf-total-price').text(totalPrice);
 	  
 	});
+	jQuery('.bf-trigger-input').change(function(e){
+	  	
+	});
+	jQuery('.bf-plus-trigger').click(function(e){
+	  var input_id = jQuery(this).attr('for');
+	  var price = Number(jQuery(this).attr('data-price'));
+	  var input = jQuery('#'+input_id);
+	  	  
+	  var minus = jQuery(this).attr('data-m');
+	  var count = Number(input.val());
+	  if(minus=="true"){
+	    if(count!=0){
+	      count--;
+		}else{
+		  return;
+		}
+	  }else{
+	    count++;
+	  }
+	  input.val(count);
+ 	  
+	  var totalPrice = Number(jQuery('.bf-total-price').text());
+	  totalPrice+=price;	  
+	  jQuery('.bf-total-price').text(totalPrice);
+
+	});
 	
 });
 </script>
@@ -65,6 +92,13 @@ jQuery(function(){
 		
 	    <input name="quote_request[extra_ids][]" type="radio" value="2" style="display: " id="q2" checked="true">
 	    <label for="q2" class="bf-button bf-white bf-radio-triger" data-name="q2" data-price="-45" data-active="true">Each 2 week</label>
+	  </div>
+	  
+	  <div class="">
+	    <label class="bf-plus-trigger" for="i2" data-price="15" data-m="false">+</label>
+	    <input class="bf-trigger-input" name="quote_request[extra_ids][]" type="text" value="2" style="display: " id="i2" disabled>
+	    <label class="bf-plus-trigger" for="i2" data-price="-15" data-m="true">-</label>
+	    
 	  </div>
     </form>
   </div>
