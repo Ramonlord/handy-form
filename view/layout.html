@@ -74,32 +74,42 @@ jQuery(function(){
 </script>
 <div class="bf-wrap">
   <div class="bf-panel bf-left">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data" action="/wordpress/handy-form/">
 	
-	  <input id="w1" name="quote_request[extra_ids][]" type="checkbox" value="2" style="display: ">
+	  <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: ">
 	  <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">
 	    Text in button
 	  </label>
       
-	  <input  id = "w2" name="quote_request[extra_ids][]" type="checkbox" value="2" style="display: ">
+	  <input  id = "w2" name="input_1.2" type="checkbox" value="second checkbox" style="display: ">
 	  <label for="w2" class="bf-button bf-white bf-button-triger" data-price="45" data-text="Clean good" data-name="n2">
 	    Text in button
 	  </label>
 	  
 	  <div class="">
-	    <input name="quote_request[extra_ids][]" type="radio" value="2" style="display: " id="q1">
+	    <input name="input_2" type="radio" value="Radio1" style="display: " id="q1">
 	    <label for="q1" class="bf-button bf-white bf-radio-triger" data-name="q1" data-price="-15" data-active="false">Each week</label>
 		
-	    <input name="quote_request[extra_ids][]" type="radio" value="2" style="display: " id="q2" checked="true">
+	    <input name="input_2" type="radio" value="Radio2" style="display: " id="q2" checked="true">
 	    <label for="q2" class="bf-button bf-white bf-radio-triger" data-name="q2" data-price="-45" data-active="true">Each 2 week</label>
 	  </div>
 	  
 	  <div class="">
 	    <label class="bf-plus-trigger" for="i2" data-price="15" data-m="false">+</label>
-	    <input class="bf-trigger-input" name="quote_request[extra_ids][]" type="text" value="2" style="display: " id="i2" disabled>
+	    <input class="bf-trigger-input" name="input_3" type="text" value="2" style="display: " id="i2" disabled>
 	    <label class="bf-plus-trigger" for="i2" data-price="-15" data-m="true">-</label>
 	    
 	  </div>
+	  <input type="submit" value="Submit">
+	              <input type="hidden" class="gform_hidden" name="is_submit_1" value="1">
+            <input type="hidden" class="gform_hidden" name="gform_submit" value="1">
+            
+            <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
+            <input type="hidden" class="gform_hidden" name="state_1" value="WyJbXSIsIjI5NDY3YWNkYzljNDUyMjY1ODJlNDMzYzliYzZjYzgyIl0=">
+            <input type="hidden" class="gform_hidden" name="gform_target_page_number_1" id="gform_target_page_number_1" value="0">
+            <input type="hidden" class="gform_hidden" name="gform_source_page_number_1" id="gform_source_page_number_1" value="1">
+            <input type="hidden" name="gform_field_values" value="">
+
     </form>
   </div>
   <div class="bf-panel bf-right">
