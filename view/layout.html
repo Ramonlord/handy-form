@@ -7,7 +7,6 @@ jQuery(function(){
 	  jQuery(old_active).attr('data-active',false).removeClass('bf-active');
 	  
 	  var old_price = Number(jQuery(old_active).attr('data-price'));
-	  debugger;
 	  totalPrice -= old_price;
 	  
 	  var price = Number(jQuery(this).attr('data-price'));
@@ -43,8 +42,9 @@ jQuery(function(){
 	  jQuery('.bf-total-price').text(totalPrice);
 	  
 	});
-	jQuery('.bf-trigger-input').change(function(e){
-	  	
+	
+	jQuery('.bf-trigger-input').focus(function(e){
+	  jQuery(this).blur();
 	});
 	jQuery('.bf-plus-trigger').click(function(e){
 	  var input_id = jQuery(this).attr('for');
@@ -72,32 +72,156 @@ jQuery(function(){
 	
 });
 </script>
-<div class="bf-wrap">
-  <div class="bf-panel bf-left">
+<div class="bf-wrap row">
+  <div class="bf-panel col-md-8">
+  
+    <div class="bf-section-row bf-top-section row">
+	    <div class="col-md-12">
+	      <p class="bf-top">Complete your booking</p>
+	      <p class="bf-body">Great! We have availability at this time. A few more details and we can complete your booking.</p>
+	    </div>
+	</div>
+
+    <div class="bf-section-row row">
+	    <div class="col-md-12">
+	       <div class="bf-title">Address</div>
+		   <div class="row">
+		     <div class="col-md-6">
+			   <label class="bf-input-label">City</label>
+               <select class="form-control"> 
+			     <option>test</option>
+			   </select>
+		     </div>
+		     <div class="col-md-6">
+			   <label class="bf-input-label">Address</label>
+               <input type="text" class="form-control">
+		     </div>
+		   </div>
+	    </div>
+    </div>
+    <div class="bf-section-row row">		
+	    <div class="col-md-12">
+	       <div class="bf-title">Your place</div>
+		   <div class="row">
+		     <div class="col-md-6">
+			   <label class="bf-input-label">Bedrooms</a>
+			   <div class="bf-plus-minus">
+                 <span class="bf-plus-trigger bf-label" for="i2" data-price="15" data-m="false">+</span>
+                 <input class="bf-trigger-input bf-input form-control" name="input_3" type="text" value="2" id="i2">
+                 <span class="bf-plus-trigger bf-label" for="i2" data-price="-15" data-m="true">-</span>
+		       </div>
+		     </div>
+		     <div class="col-md-6">
+			   <label class="bf-input-label">Bathrooms</a>
+			   <div class="bf-plus-minus">
+                 <span class="bf-plus-trigger bf-label" for="i3" data-price="15" data-m="false">+</span>
+                 <input class="bf-trigger-input bf-input form-control" name="input_3" type="text" value="2" id="i3">
+                 <span class="bf-plus-trigger bf-label" for="i3" data-price="-15" data-m="true">-</span>
+		       </div>
+		     </div>
+		   </div>
+	    </div>
+	</div>
+    <div class="bf-section-row row">		
+	    <div class="col-md-12">
+	       <div class="bf-title">How often?</div>
+		   <div class="row">
+		     <div class="col-md-4">
+	           <input name="input_2" type="radio" value="Radio1" style="display: none" id="q1">
+	           <label for="q1" class="bf-button bf-white bf-radio-triger bf-active" data-name="q1" data-price="-15" data-active="true">Each week</label>
+		     </div>
+		     <div class="col-md-4">
+	           <input name="input_2" type="radio" value="Radio1" style="display: none" id="q2">
+	           <label for="q2" class="bf-button bf-white bf-radio-triger" data-name="q2" data-price="-25" data-active="false">Each 2 week</label>
+		     </div>
+		     <div class="col-md-4">
+	           <input name="input_2" type="radio" value="Radio1" style="display: none" id="q3">
+	           <label for="q3" class="bf-button bf-white bf-radio-triger" data-name="q3" data-price="-45" data-active="false">Each 3 week</label>
+		     </div>
+		   </div>
+	    </div>
+	</div>
+    <div class="bf-section-row row">		
+	    <div class="col-md-12">
+	       <div class="bf-title">When?</div>
+		   <div class="row">
+		     <div class="col-md-6">
+	           <label class="bf-input-label">Date</label>
+               <input type="text" class="form-control">
+		     </div>
+		     <div class="col-md-6">
+			   <label class="bf-input-label">Time</label>
+               <input type="text" class="form-control">
+ 		     </div>
+		   </div>
+	    </div>
+	</div>
+    <div class="bf-section-row row">		
+	    <div class="col-md-12">
+	       <div class="bf-title">Extras</div>
+		   <div class="row">
+		     <div class="col-md-3">
+	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
+	           <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">Text in button</label>
+		     </div>
+		     <div class="col-md-3">
+	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
+	           <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">Text in button</label>
+		     </div>
+		     <div class="col-md-3">
+	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
+	           <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">Text in button</label>
+		     </div>
+		     <div class="col-md-3">
+	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
+	           <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">Text in button</label>
+		     </div>
+		   </div>
+	    </div>
+	</div>
+    <div class="bf-section-row row">		
+	    <div class="col-md-12">
+	       <div class="bf-title">Additional services</div>
+		   <div class="row">
+		     <div class="col-md-12">
+			   <textarea class="bf-texta"></textarea>
+ 		     </div>
+		   </div>
+	    </div>
+	</div>
+    <div class="bf-section-row row">		
+	    <div class="col-md-12">
+           <input class="bf-submit" type="submit" value="Submit">
+	    </div>
+	</div>
+	
+	
+    
+<!--	<div class="bf-section">
+	  <div class="bf-address-row">
+	    <div class="bf-title">Address</div>
+		<div class="bf-col-6">
+		</div>
+		<div class="bf-col-6">
+		  <label >Zip code</label>
+		  <input type="text" placeholder="ZIP Code">
+		</div>
+	  </div>
+	</div>
+
+	
     <form method="post" enctype="multipart/form-data" action="/wordpress/handy-form/">
 	
-	  <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: ">
-	  <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">
-	    Text in button
-	  </label>
+
       
-	  <input  id = "w2" name="input_1.2" type="checkbox" value="second checkbox" style="display: ">
-	  <label for="w2" class="bf-button bf-white bf-button-triger" data-price="45" data-text="Clean good" data-name="n2">
-	    Text in button
-	  </label>
 	  
 	  <div class="">
-	    <input name="input_2" type="radio" value="Radio1" style="display: " id="q1">
-	    <label for="q1" class="bf-button bf-white bf-radio-triger" data-name="q1" data-price="-15" data-active="false">Each week</label>
-		
+	    
 	    <input name="input_2" type="radio" value="Radio2" style="display: " id="q2" checked="true">
 	    <label for="q2" class="bf-button bf-white bf-radio-triger" data-name="q2" data-price="-45" data-active="true">Each 2 week</label>
 	  </div>
 	  
 	  <div class="">
-	    <label class="bf-plus-trigger" for="i2" data-price="15" data-m="false">+</label>
-	    <input class="bf-trigger-input" name="input_3" type="text" value="2" style="display: " id="i2">
-	    <label class="bf-plus-trigger" for="i2" data-price="-15" data-m="true">-</label>
 	    
 	  </div>
 	  <input type="submit" value="Submit">
@@ -110,15 +234,25 @@ jQuery(function(){
             <input type="hidden" class="gform_hidden" name="gform_source_page_number_1" id="gform_source_page_number_1" value="1">
             <input type="hidden" name="gform_field_values" value="">
 
-    </form>
+    </form>-->
   </div>
-  <div class="bf-panel bf-right">
+  <div class="bf-panel col-md-4">
+      <div class="row">		
+	    <div class="col-md-2">I</div>
+	    <div class="col-md-10">Home Cleaning</div>
+	  </div>
+	  <div class="row">		
+	    <div class="col-md-2"></div>
+	    <div class="col-md-10"><div class="bf-list"></div></div>
+	  </div>
+	  <div class="row">		
+	    <div class="col-md-7"><span class="bf-pr">Total price: </span></div>
+	    <div class="col-md-5 bf-total-price2" style="text-align: right;"><span class="bf-total-price">125</span>$</div>
+	  </div>
     <div class="bf-price">
-	  Total price: <span class="bf-total-price">125</span> $
+	  
 	</div>
 	
-    <div class="bf-list">
-	  <div class="list-element list-element-NAME">+ Example of item</div>
-	</div>
+
   </div>
 </div>

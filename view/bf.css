@@ -1,14 +1,92 @@
 .bf-wrap{
   border: 1px solid;
+  font-family: "Circular","Helvetica",sans-serif;
+}
+
+.bf-section-row{
+  border-bottom: 1px solid #dbe1e4;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.bf-top-section{
+  text-align: center;
+}
+
+.bf-top{
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.bf-body{
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.bf-title{
+  font-size: 24px;
+}
+
+.bf-input-label{
+  font-size: 16px;
+  font-weight: bold;
 }
 
 
+/* +- */
+
+.bf-plus-minus > *{
+  float: left;
+}
+
+.bf-plus-minus {
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.bf-plus-minus .bf-input{
+  width: 70%;
+  border: none;
+}
+
+.bf-plus-minus .bf-label{
+  width: 15%;
+  text-align: center;
+  line-height: 34px;
+}
+
+.bf-plus-minus:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.bf-submit{
+  width: 90%;
+  margin: 0px auto;
+  display: block;
+  border: none;
+  background-color: #98cc53;
+  font-size: 20px;
+}
+
+.bf-texta{
+  width: 100%;
+  min-height: 100px;
+}
+
+.bf-pr{
+  font-size: 18px;
+  line-height: 36px;
+}
+.bf-total-price2{
+  font-size: 24px;
+  color: #0bb8e3;
+}
+
+
+
 .bf-panel{
-  display: inline-block;
-  vertical-align: top;
-  border: 1px solid red;
-  padding: 15px;
-  box-sizing: border-box;
 }
 
 .bf-left{
@@ -22,31 +100,48 @@
 
 
 .bf-button{
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  text-decoration: none;
 }
 
 .bf-button.bf-white{
   background-color: white;
   border: 1px solid #00CDED;
+  border-radius: 4px;
+  padding: 8px 15px;
+  color: #0bb8e3;
 }
 
 .bf-button.bf-white.bf-active{
   background-color: #00CDED;
+  color: black;
+}
+
+
+.bf-section{
+  border-bottom: 1px solid;
+}
+
+.bf-head-row{
+  text-align: center;
+}
+
+
+
+
+.bf-address-row{
+  padding: 0 10px;
+}
+
+.bf-address-row label{
+  font-size: 14px;
+}
+
+.bf-col-6{
+  width: 50%;
+  float: left;
+}
+
+.bf-address-row:after{
+  clear: both;
+    content: " ";
+  display: table;
 }

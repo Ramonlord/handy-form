@@ -21,6 +21,8 @@ add_action( 'wp_enqueue_scripts', function(){
 	global $BF_PLUGIN_URL;
   wp_enqueue_script('bf_script',$BF_PLUGIN_URL.'view/bf.js');
   wp_enqueue_style('bf_style',$BF_PLUGIN_URL.'view/bf.css');
+  wp_enqueue_style('bootstrap',$BF_PLUGIN_URL.'view/css/bootstrap.css');
+  wp_enqueue_style('bootstrap-theme',$BF_PLUGIN_URL.'view/css/bootstrap-theme.css');
 });
 
 
