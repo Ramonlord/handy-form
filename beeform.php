@@ -4,10 +4,10 @@
   Plugin URI: http://beevisualbuilder.com
   Description: Form.
   Author: Beecoding
-  Version: 0.1
+  Version: 0.2
   Author URI: http://beecoding.com/
  */
-$CURRENT_PLUGIN_VERSION = '0.1';
+$CURRENT_PLUGIN_VERSION = '0.2';
 
 $BF_PLUGIN_URL = plugins_url().'/beeform/';
 
