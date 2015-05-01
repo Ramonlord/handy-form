@@ -3,14 +3,26 @@
 }
 
 .bf-wrap{
-  border: 1px solid;
   font-family: "Circular","Helvetica",sans-serif;
 }
 
+.bf-panel {
+  padding-top: 25px;
+}
+
 .bf-section-row{
-  border-bottom: 1px solid #dbe1e4;
-  padding-top: 15px;
+  /*border-bottom: 1px solid #dbe1e4;*/
+  /*padding-top: 25px;*/
   padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;	
+}
+
+.bf-section-row:after {
+  content: ' ';
+  display: block!important;
+  padding-top: 15px;
+  border-bottom: 1px solid #dbe1e4;
 }
 
 .bf-top-section{
@@ -18,24 +30,45 @@
 }
 
 .bf-top{
-  font-size: 24px;
+  font-size: 28px;
   margin: 20px 0;
+  margin-top: 10px;
+  font-weight: 500;
 }
 
 .bf-body{
   margin-bottom: 20px;
   padding: 0 10px;
+  font-size: 17px;
 }
 
 .bf-title{
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 7px;
 }
 
 .bf-input-label{
   font-size: 16px;
-  font-weight: bold;
 }
 
+.bf-input:focus{
+  outline: none;
+}
+
+.bf-wrap label{
+  display: inline-block;
+}
+
+.bf-frm-inp, .bf-plus-minus{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #babbbd!important;
+}
+
+.bf-section-address label{
+   margin-top: 10px;
+}
 
 /* +- */
 
@@ -46,17 +79,25 @@
 .bf-plus-minus {
   border: 1px solid;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .bf-plus-minus .bf-input{
   width: 70%;
   border: none;
+  border-left: 1px solid #babbbd!important;
+  border-right: 1px solid #babbbd!important;
+  border-radius: 0px;
 }
 
+.bf-plus-minus .bf-label:hover{
+  background-color: #F0F2F4;
+}
 .bf-plus-minus .bf-label{
   width: 15%;
   text-align: center;
   line-height: 34px;
+  cursor: pointer;
 }
 
 .bf-plus-minus:after {
@@ -104,6 +145,7 @@
 
 
 .bf-button{
+  cursor: pointer;
 }
 
 .bf-button.bf-white{
@@ -112,11 +154,12 @@
   border-radius: 4px;
   padding: 8px 15px;
   color: #0bb8e3;
+  cursor: pointer;
 }
 
 .bf-button.bf-white.bf-active{
   background-color: #00CDED;
-  color: black;
+  color: white;
 }
 
 
@@ -148,4 +191,57 @@
   clear: both;
     content: " ";
   display: table;
+}
+
+
+
+.bf-extra{
+  color: #0bb8e3;
+}
+
+.bf-extra-label {
+  color: #999;
+  line-height: 1.4;
+}
+
+.bf-extra-icon {
+  background-image: url(' http://ipic.su/img/img7/fs/kiss_1kb.1430471758.png');
+  width: 75px;
+  height: 75px;
+}
+
+.bf-extra.bf-active > .bf-extra-label {
+  color: #000;
+}
+
+.bf-extra.bf-active{
+  color: #000;
+}
+
+
+
+.bf-icon{
+  font-size: 24px;
+  color: #dbe1e4;
+}
+
+.bf-price-top{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.list-element:before {
+  content: '+ ';
+}
+
+.bf-total-price{
+  font-size: 46px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.bf-bg{
+  background-color: white;
+  padding-top: 15px;
 }

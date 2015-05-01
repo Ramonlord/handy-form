@@ -70,11 +70,32 @@ jQuery(function(){
 
 	});
 	
+	jQuery( ".bf-date" ).datepicker();
+	
+	jQuery('.bf-sync').on('change',function(){
+	  jQuery(".bf-sync").prop('selectedIndex', this.selectedIndex);  
+	});
+	
+	var pold = jQuery('.bf-scroll').offset().top;
+	jQuery(window).scroll(function(){
+	  if(jQuery(window).width() > 976){
+	    var s = jQuery(window).scrollTop();
+	    var pos = jQuery('.bf-scroll').offset().top;
+	    if(s-10 > pold){
+	      jQuery('.bf-scroll').css('margin-top',s-pold-10);
+		}else{
+		  jQuery('.bf-scroll').css('margin-top','');
+		}
+	  }
+	});
+	
 });
+
 </script>
+
 <div class="bf-wrap row">
   <div class="bf-panel col-md-8">
-  
+   <div class="bf-bg">
     <div class="bf-section-row bf-top-section row">
 	    <div class="col-md-12">
 	      <p class="bf-top">Complete your booking</p>
@@ -88,13 +109,31 @@ jQuery(function(){
 		   <div class="row">
 		     <div class="col-md-6">
 			   <label class="bf-input-label">City</label>
-               <select class="form-control"> 
-			     <option>test</option>
+               <select class="form-control bf-frm-inp bf-sync"> 
+<option value="Arlington">Arlington</option>
+<option value="Boston">Boston</option>
+<option value="Belmont">Belmont</option>
+<option value="Brookline">Brookline</option>
+<option value="Burlington">Burlington</option>
+<option value="Cambridge">Cambridge</option>
+<option value="Chelsea">Chelsea</option>
+<option value="Medford">Medford</option>
+<option value="Malden">Malden</option>
+<option value="Everett">Everett</option>
+<option value="Lexington">Lexington</option>
+<option value="Lincoln">Lincoln</option>
+<option value="Melrose">Melrose</option>
+<option value="Newton">Newton</option>
+<option value="Revere">Revere</option>
+<option value="Somerville">Somerville</option>
+<option value="Saugus">Saugus</option>
+<option value="Sudbury">Sudbury</option>
+<option value="Watertown">Watertown</option>
+<option value="Waltham">Waltham</option>
+<option value="Wellesley">Wellesley</option>
+<option value="Winchester">Winchester</option>
+<option value="Winthrop">Winthrop</option>
 			   </select>
-		     </div>
-		     <div class="col-md-6">
-			   <label class="bf-input-label">Address</label>
-               <input type="text" class="form-control">
 		     </div>
 		   </div>
 	    </div>
@@ -104,7 +143,7 @@ jQuery(function(){
 	       <div class="bf-title">Your place</div>
 		   <div class="row">
 		     <div class="col-md-6">
-			   <label class="bf-input-label">Bedrooms</a>
+			   <label class="bf-input-label">Bedrooms</label>
 			   <div class="bf-plus-minus">
                  <span class="bf-plus-trigger bf-label" for="i2" data-price="15" data-m="false">+</span>
                  <input class="bf-trigger-input bf-input form-control" name="input_3" type="text" value="2" id="i2">
@@ -112,13 +151,58 @@ jQuery(function(){
 		       </div>
 		     </div>
 		     <div class="col-md-6">
-			   <label class="bf-input-label">Bathrooms</a>
+			   <label class="bf-input-label">Bathrooms</label>
 			   <div class="bf-plus-minus">
                  <span class="bf-plus-trigger bf-label" for="i3" data-price="15" data-m="false">+</span>
                  <input class="bf-trigger-input bf-input form-control" name="input_3" type="text" value="2" id="i3">
                  <span class="bf-plus-trigger bf-label" for="i3" data-price="-15" data-m="true">-</span>
 		       </div>
 		     </div>
+		   </div>
+	    </div>
+	</div>
+    <div class="bf-section-row row">		
+	    <div class="col-md-12">
+	       <div class="bf-title">When?</div>
+		   <div class="row">
+		     <div class="col-md-6">
+	           <label class="bf-input-label">Date</label>
+               <input type="text" class="form-control bf-frm-inp bf-date">
+		     </div>
+		     <div class="col-md-6">
+			   <label class="bf-input-label">Time</label>
+			   <select class="form-control bf-frm-inp">
+			     <option value="07:00">7:00 AM</option>
+                 <option value="07:30">7:30 AM</option>
+<option value="08:00">8:00 AM</option>
+<option value="08:30">8:30 AM</option>
+<option value="09:00">9:00 AM</option>
+<option value="09:30">9:30 AM</option>
+<option value="10:00">10:00 AM</option>
+<option value="10:30">10:30 AM</option>
+<option value="11:00">11:00 AM</option>
+<option value="11:30">11:30 AM</option>
+<option value="12:00">12:00 PM</option>
+<option value="12:30">12:30 PM</option>
+<option value="13:00">1:00 PM</option>
+<option value="13:30">1:30 PM</option>
+<option value="14:00">2:00 PM</option>
+<option value="14:30">2:30 PM</option>
+<option value="15:00">3:00 PM</option>
+<option value="15:30">3:30 PM</option>
+<option value="16:00">4:00 PM</option>
+<option value="16:30">4:30 PM</option>
+<option value="17:00">5:00 PM</option>
+<option value="17:30">5:30 PM</option>
+<option value="18:00">6:00 PM</option>
+<option value="18:30">6:30 PM</option>
+<option value="19:00">7:00 PM</option>
+<option value="19:30">7:30 PM</option>
+<option value="20:00">8:00 PM</option>
+<option value="20:30">8:30 PM</option>
+<option value="21:00">9:00 PM</option>
+  </select>
+ 		     </div>
 		   </div>
 	    </div>
 	</div>
@@ -141,40 +225,96 @@ jQuery(function(){
 		   </div>
 	    </div>
 	</div>
-    <div class="bf-section-row row">		
+    <div class="bf-section-row row bf-section-address">
 	    <div class="col-md-12">
-	       <div class="bf-title">When?</div>
+	       <div class="bf-title">Address</div>
 		   <div class="row">
 		     <div class="col-md-6">
-	           <label class="bf-input-label">Date</label>
-               <input type="text" class="form-control">
+			   <label class="bf-input-label">First Name</label>
+			   <input type="text" class="form-control bf-frm-inp">               
 		     </div>
 		     <div class="col-md-6">
-			   <label class="bf-input-label">Time</label>
-               <input type="text" class="form-control">
- 		     </div>
+			   <label class="bf-input-label">Last Name</label>
+			   <input type="text" class="form-control bf-frm-inp">               
+		     </div>
+		   </div>
+		   <div class="row">
+		     <div class="col-md-6">
+			   <label class="bf-input-label">Street Address</label>
+			   <input type="text" class="form-control bf-frm-inp">               
+		     </div>
+		     <div class="col-md-6">
+			   <label class="bf-input-label">Apt # (optional)</label>
+			   <input type="text" class="form-control bf-frm-inp">               
+		     </div>
+		   </div>
+		   <div class="row">
+		     <div class="col-md-6">
+			   <label class="bf-input-label">City</label>
+               <select class="form-control bf-frm-inp bf-sync"> 
+<option value="Arlington">Arlington</option>
+<option value="Boston">Boston</option>
+<option value="Belmont">Belmont</option>
+<option value="Brookline">Brookline</option>
+<option value="Burlington">Burlington</option>
+<option value="Cambridge">Cambridge</option>
+<option value="Chelsea">Chelsea</option>
+<option value="Medford">Medford</option>
+<option value="Malden">Malden</option>
+<option value="Everett">Everett</option>
+<option value="Lexington">Lexington</option>
+<option value="Lincoln">Lincoln</option>
+<option value="Melrose">Melrose</option>
+<option value="Newton">Newton</option>
+<option value="Revere">Revere</option>
+<option value="Somerville">Somerville</option>
+<option value="Saugus">Saugus</option>
+<option value="Sudbury">Sudbury</option>
+<option value="Watertown">Watertown</option>
+<option value="Waltham">Waltham</option>
+<option value="Wellesley">Wellesley</option>
+<option value="Winchester">Winchester</option>
+<option value="Winthrop">Winthrop</option>
+			   </select>
+		     </div>
+		     <div class="col-md-6">
+			   <label class="bf-input-label">Phone Number</label>
+			   <input type="text" class="form-control bf-frm-inp">               
+		     </div>
 		   </div>
 	    </div>
-	</div>
+    </div>
     <div class="bf-section-row row">		
 	    <div class="col-md-12">
 	       <div class="bf-title">Extras</div>
 		   <div class="row">
 		     <div class="col-md-3">
 	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
-	           <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">Text in button</label>
+	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="21" data-active="false" data-text="Clean twice" data-name="n1">
+			     <div class="bf-extra-icon"></div>
+                 <div class="bf-extra-label">Some text</div>
+			   </label>
 		     </div>
 		     <div class="col-md-3">
 	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
-	           <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">Text in button</label>
+	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="32" data-active="false" data-text="Clean twice" data-name="n2">
+   			     <div class="bf-extra-icon"></div>
+                 <div class="bf-extra-label">Some text</div>
+			   </label>
 		     </div>
 		     <div class="col-md-3">
 	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
-	           <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">Text in button</label>
+	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="43" data-active="false" data-text="Clean twice" data-name="n3">			     
+			     <div class="bf-extra-icon"></div>
+                 <div class="bf-extra-label">Some text</div>
+               </label>
 		     </div>
 		     <div class="col-md-3">
 	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
-	           <label for="w1" class="bf-button bf-white bf-button-triger" data-price="25" data-active="false" data-text="Clean twice" data-name="n1">Text in button</label>
+	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="54" data-active="false" data-text="Clean twice" data-name="n4">
+			     <div class="bf-extra-icon"></div>
+                 <div class="bf-extra-label">Some text</div>
+			   </label>
 		     </div>
 		   </div>
 	    </div>
@@ -194,6 +334,7 @@ jQuery(function(){
            <input class="bf-submit" type="submit" value="Submit">
 	    </div>
 	</div>
+  </div>
 	
 	
     
@@ -236,23 +377,26 @@ jQuery(function(){
 
     </form>-->
   </div>
-  <div class="bf-panel col-md-4">
+  <div class="bf-panel col-md-4 bf-scroll">
+    <div class="bf-bg">
+    <div class="bf-section-row row">
       <div class="row">		
-	    <div class="col-md-2">I</div>
-	    <div class="col-md-10">Home Cleaning</div>
+	    <div class="col-md-2"><span class="glyphicon glyphicon-home bf-icon"></span></div>
+	    <div class="col-md-10"><span class="bf-price-top">Home Cleaning</span></div>
 	  </div>
 	  <div class="row">		
 	    <div class="col-md-2"></div>
 	    <div class="col-md-10"><div class="bf-list"></div></div>
 	  </div>
+	</div>
+    <div class="bf-section-row row">
 	  <div class="row">		
 	    <div class="col-md-7"><span class="bf-pr">Total price: </span></div>
-	    <div class="col-md-5 bf-total-price2" style="text-align: right;"><span class="bf-total-price">125</span>$</div>
+	    <div class="col-md-5 bf-total-price2" style="text-align: right; padding-right: 30px;"><span class="bf-total-price">95</span><span class="bf-total-dollar">$</span></div>
 	  </div>
-    <div class="bf-price">
-	  
-	</div>
+    </div>
 	
 
+  </div>
   </div>
 </div>
