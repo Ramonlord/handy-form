@@ -1,3 +1,7 @@
+.container {
+  width: 1020px!important;
+}
+
 .bf-wrap{
   border: 1px solid;
   font-family: "Circular","Helvetica",sans-serif;
@@ -65,9 +69,9 @@
   width: 90%;
   margin: 0px auto;
   display: block;
-  border: none;
-  background-color: #98cc53;
-  font-size: 20px;
+  border: none!important;
+  background-color: #98cc53!important;
+  font-size: 20px!important;
 }
 
 .bf-texta{
