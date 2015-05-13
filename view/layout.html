@@ -60,7 +60,12 @@ jQuery(function(){
 		  return;
 		}
 	  }else{
-	    count++;
+	    if(count==3){
+		   alert('You can chose not more than 3 items');
+		  return;
+		}else{
+	      count++;
+		}
 	  }
 	  input.val(count);
  	  
@@ -146,7 +151,7 @@ jQuery(function(){
 			   <label class="bf-input-label">Bedrooms</label>
 			   <div class="bf-plus-minus">
                  <span class="bf-plus-trigger bf-label" for="i2" data-price="15" data-m="false">+</span>
-                 <input class="bf-trigger-input bf-input form-control" name="input_3" type="text" value="2" id="i2">
+                 <input class="bf-trigger-input bf-input form-control" name="input_3" type="text" value="1" id="i2">
                  <span class="bf-plus-trigger bf-label" for="i2" data-price="-15" data-m="true">-</span>
 		       </div>
 		     </div>
@@ -154,7 +159,7 @@ jQuery(function(){
 			   <label class="bf-input-label">Bathrooms</label>
 			   <div class="bf-plus-minus">
                  <span class="bf-plus-trigger bf-label" for="i3" data-price="15" data-m="false">+</span>
-                 <input class="bf-trigger-input bf-input form-control" name="input_3" type="text" value="2" id="i3">
+                 <input class="bf-trigger-input bf-input form-control" name="input_3" type="text" value="1" id="i3">
                  <span class="bf-plus-trigger bf-label" for="i3" data-price="-15" data-m="true">-</span>
 		       </div>
 		     </div>
@@ -212,15 +217,15 @@ jQuery(function(){
 		   <div class="row">
 		     <div class="col-md-4">
 	           <input name="input_2" type="radio" value="Radio1" style="display: none" id="q1">
-	           <label for="q1" class="bf-button bf-white bf-radio-triger bf-active" data-name="q1" data-price="-15" data-active="true">Each week</label>
+	           <label for="q1" class="bf-button bf-white bf-radio-triger" data-name="q1" data-price="-5" data-active="false">Each week</label>
 		     </div>
 		     <div class="col-md-4">
 	           <input name="input_2" type="radio" value="Radio1" style="display: none" id="q2">
-	           <label for="q2" class="bf-button bf-white bf-radio-triger" data-name="q2" data-price="-25" data-active="false">Each 2 week</label>
+	           <label for="q2" class="bf-button bf-white bf-radio-triger bf-active" data-name="q2" data-price="0" data-active="true">Each 2 week</label>
 		     </div>
 		     <div class="col-md-4">
 	           <input name="input_2" type="radio" value="Radio1" style="display: none" id="q3">
-	           <label for="q3" class="bf-button bf-white bf-radio-triger" data-name="q3" data-price="-45" data-active="false">Each 3 week</label>
+	           <label for="q3" class="bf-button bf-white bf-radio-triger" data-name="q3" data-price="10" data-active="false">Each 4 week</label>
 		     </div>
 		   </div>
 	    </div>
@@ -290,36 +295,36 @@ jQuery(function(){
 		   <div class="row">
 		     <div class="col-md-3">
 	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
-	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="21" data-active="false" data-text="Clean twice" data-name="n1">
+	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="25" data-active="false" data-text="Inside the Fridge and Freezer" data-name="n1">
 			     <div class="bf-extra-icon"></div>
-                 <div class="bf-extra-label">Some text</div>
+                 <div class="bf-extra-label">Inside the Fridge and Freezer</div>
 			   </label>
 		     </div>
 		     <div class="col-md-3">
 	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
-	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="32" data-active="false" data-text="Clean twice" data-name="n2">
+	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="25" data-active="false" data-text="Inside Oven" data-name="n2">
    			     <div class="bf-extra-icon"></div>
-                 <div class="bf-extra-label">Some text</div>
+                 <div class="bf-extra-label">Inside Oven</div>
 			   </label>
 		     </div>
 		     <div class="col-md-3">
 	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
-	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="43" data-active="false" data-text="Clean twice" data-name="n3">			     
+	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="25" data-active="false" data-text="Move In / Move Out Cleaning" data-name="n3">			     
 			     <div class="bf-extra-icon"></div>
-                 <div class="bf-extra-label">Some text</div>
+                 <div class="bf-extra-label">Move In / Move Out Cleaning</div>
                </label>
 		     </div>
 		     <div class="col-md-3">
 	           <input id="w1" name="input_1.1" type="checkbox" value="first checkbox" style="display: none">
-	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="54" data-active="false" data-text="Clean twice" data-name="n4">
+	           <label for="w1" class="bf-button bf-extra bf-button-triger" data-price="25" data-active="false" data-text="Windows" data-name="n4">
 			     <div class="bf-extra-icon"></div>
-                 <div class="bf-extra-label">Some text</div>
+                 <div class="bf-extra-label">Windows</div>
 			   </label>
 		     </div>
 		   </div>
 	    </div>
 	</div>
-    <div class="bf-section-row row">		
+    <div class="bf-section-row row bf-last-row">
 	    <div class="col-md-12">
 	       <div class="bf-title">Additional services</div>
 		   <div class="row">
@@ -329,7 +334,7 @@ jQuery(function(){
 		   </div>
 	    </div>
 	</div>
-    <div class="bf-section-row row">		
+    <div class="bf-section-row row bf-last-row">
 	    <div class="col-md-12">
            <input class="bf-submit" type="submit" value="Submit">
 	    </div>
@@ -351,8 +356,8 @@ jQuery(function(){
 	</div>
     <div class="bf-section-row row">
 	  <div class="row">		
-	    <div class="col-md-7"><span class="bf-pr">Total price: </span></div>
-	    <div class="col-md-5 bf-total-price2" style="text-align: right; padding-right: 30px;"><span class="bf-total-price">95</span><span class="bf-total-dollar">$</span></div>
+	    <div class="col-md-6"><span class="bf-pr">Total price: </span></div>
+	    <div class="col-md-6 bf-total-price2" style="text-align: right; padding-right: 30px;"><span class="bf-total-price">65</span><span class="bf-total-dollar">$</span></div>
 	  </div>
     </div>
 	
