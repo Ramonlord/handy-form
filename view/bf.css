@@ -108,8 +108,8 @@
 
 .bf-submit{
   width: 90%;
-  margin: 0px auto;
-  display: block;
+  margin: 0px auto!important;
+  display: block!important;
   border: none!important;
   background-color: #98cc53!important;
   font-size: 20px!important;
@@ -155,6 +155,10 @@
   padding: 8px 15px;
   color: #0bb8e3;
   cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  width: 120px;
 }
 
 .bf-button.bf-white.bf-active{
@@ -193,7 +197,9 @@
   display: table;
 }
 
-
+.bf-last-row:after {
+  border: none;
+}
 
 .bf-extra{
   color: #0bb8e3;
@@ -202,12 +208,14 @@
 .bf-extra-label {
   color: #999;
   line-height: 1.4;
+  text-align: center;
 }
 
 .bf-extra-icon {
   background-image: url(' http://ipic.su/img/img7/fs/kiss_1kb.1430471758.png');
   width: 75px;
   height: 75px;
+  margin: 0 auto;
 }
 
 .bf-extra.bf-active > .bf-extra-label {
