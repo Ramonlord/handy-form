@@ -46,16 +46,46 @@ jQuery(function(){
 	jQuery('.bf-trigger-input').focus(function(e){
 	  jQuery(this).blur();
 	});
+	var rooms = {
+	  bathrooms: 1,
+	  bedrooms: 1,
+	};
+	var rooms_price = {
+	  '1':{
+	    '1': 0,
+	    '2': 4,
+	    '3': 4,
+	  },
+	  '2':{
+	    '1': 14,
+	    '2': 34,
+	    '3': 34,
+	  },
+	  '3':{
+	    '1': 54,
+	    '2': 54,
+	    '3': 54,
+	  }
+	}
 	jQuery('.bf-plus-trigger').click(function(e){
 	  var input_id = jQuery(this).attr('for');
-	  var price = Number(jQuery(this).attr('data-price'));
+	  //var price = Number(jQuery(this).attr('data-price'));
+	  var price = 0;
 	  var input = jQuery('#'+input_id);
+	  var input_type = input.attr('data-ftype');
 	  	  
 	  var minus = jQuery(this).attr('data-m');
 	  var count = Number(input.val());
 	  if(minus=="true"){
 	    if(count!=0){
-	      count--;
+  	      price -= rooms_price[rooms.bedrooms][rooms.bathrooms];
+		  if(input_type == 'bathrooms'){
+	        rooms.bathrooms--;
+		  }else{
+		    rooms.bedrooms--;
+		  }
+		  price += rooms_price[rooms.bedrooms][rooms.bathrooms];
+		  count--;
 		}else{
 		  return;
 		}
@@ -64,11 +94,20 @@ jQuery(function(){
 		   alert('You can chose not more than 3 items');
 		  return;
 		}else{
+		  
+  	      price -= rooms_price[rooms.bedrooms][rooms.bathrooms];
+		  if(input_type == 'bathrooms'){
+	        rooms.bathrooms++;
+		  }else{
+		    rooms.bedrooms++;
+		  }
+		  price += rooms_price[rooms.bedrooms][rooms.bathrooms];
 	      count++;
 		}
 	  }
 	  input.val(count);
  	  
+	  
 	  var totalPrice = Number(jQuery('.bf-total-price').text());
 	  totalPrice+=price;	  
 	  jQuery('.bf-total-price').text(totalPrice);
@@ -151,7 +190,7 @@ jQuery(function(){
 			   <label class="bf-input-label">Bedrooms</label>
 			   <div class="bf-plus-minus">
                  <span class="bf-plus-trigger bf-label" for="i2" data-price="15" data-m="false">+</span>
-                 <input class="bf-trigger-input bf-input form-control" name="input_3" type="text" value="1" id="i2">
+                 <input class="bf-trigger-input bf-input form-control"  data-ftype="bedrooms" name="input_3" type="text" value="1" id="i2">
                  <span class="bf-plus-trigger bf-label" for="i2" data-price="-15" data-m="true">-</span>
 		       </div>
 		     </div>
@@ -159,7 +198,7 @@ jQuery(function(){
 			   <label class="bf-input-label">Bathrooms</label>
 			   <div class="bf-plus-minus">
                  <span class="bf-plus-trigger bf-label" for="i3" data-price="15" data-m="false">+</span>
-                 <input class="bf-trigger-input bf-input form-control" name="input_3" type="text" value="1" id="i3">
+                 <input class="bf-trigger-input bf-input form-control"  data-ftype="bathrooms" name="input_3" type="text" value="1" id="i3">
                  <span class="bf-plus-trigger bf-label" for="i3" data-price="-15" data-m="true">-</span>
 		       </div>
 		     </div>
