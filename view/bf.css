@@ -212,9 +212,9 @@
 }
 
 .bf-extra-icon {
-  background-image: url(' http://ipic.su/img/img7/fs/kiss_1kb.1430471758.png');
   width: 75px;
   height: 75px;
+  font-size: 70px;
   margin: 0 auto;
 }
 
@@ -252,4 +252,12 @@
 .bf-bg{
   background-color: white;
   padding-top: 15px;
+}
+
+
+
+
+/* Stripe form */
+.form-row label{
+  width: 100%;
 }
